@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="atlasyazilim.nto.biletplaza.util.Constants"/>
+        <variable
+            name="movie"
+            type="mycase.musetechs.model.Movie" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/radius_17dp"
+        android:layout_margin="11dp"
+        >
+
+            <ImageView
+                android:id="@+id/imageViewMovie"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:setImageUrl='@{ Constants.IMAGE_BASE_URL + Constants.IMAGE_W154 + "/" + movie.poster_path}'
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintWidth_percent="0.3"
+                app:layout_constraintDimensionRatio="H,2:3"
+                app:layout_constraintHorizontal_bias="0"
+                android:layout_margin="11dp"
+                android:background="@drawable/radius_17dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{ movie.original_title}"
+                tools:text="Film Adı"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/imageViewMovie"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
